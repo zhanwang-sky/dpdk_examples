@@ -96,8 +96,10 @@ int main(int argc, char* argv[]) {
 
     proc_type = rte_eal_process_type();
     RTE_LOG(INFO, USER1, "proc_type=%d\n", proc_type);
-
     RTE_LOG(INFO, USER1, "lcore_count=%u\n", rte_lcore_count());
+
+    RTE_LOG(NOTICE, USER1, "&proc_type=%p, &app_main_loop=%p\n",
+            &proc_type, &app_main_loop);
 
     if (proc_type == RTE_PROC_PRIMARY) {
         msg_pool = rte_mempool_create(MSG_POOL_NAME,
