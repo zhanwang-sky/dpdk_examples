@@ -9,7 +9,7 @@ SRCS-y := main.c
 
 PKGCONF ?= pkg-config
 
-CFLAGS += -Wall -Wextra --std=c17
+CFLAGS += -Wall -Wextra
 
 # Build using pkg-config variables if possible
 ifneq ($(shell $(PKGCONF) --exists libdpdk && echo 0),0)
